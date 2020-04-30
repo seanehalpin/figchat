@@ -1,0 +1,533 @@
+button.primary.big {
+  width: 100%;
+  background: black;
+  cursor: pointer;
+}
+
+button.primary.add {
+  background: black;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.button-holder {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+}
+
+h4 {
+  font-size: 13px;
+  margin: 14px 0;
+  color: #253642;
+}
+
+input.input {
+  font-size: 13px;
+}
+
+.input .icon {
+  top: 3px !important;
+}
+
+.input input {
+  height: 40px !important;
+  font-size: 12px !important;
+}
+
+.colors {
+  display: flex;
+  margin: 15px 0 10px;
+  transition: all 0.2s;
+}
+
+.colors.true {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.colors > div {
+  margin: 0 auto;
+}
+
+.colors > div label {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.colors > div label:hover {
+  cursor: pointer !important;
+}
+
+
+.colors > div input {
+  pointer-events: none !important;
+}
+
+.colors > div label:before {
+  margin: 0 !important;
+  width: 26px;
+  height: 26px;
+  border: 1px solid transparent !important;
+  transition: all 0.2s;
+}
+
+.colors > div input:checked+label:before {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #000;
+}
+
+.colors > div:first-child label:before {
+  background-color: #FFC555 !important;
+}
+
+.colors > div:first-child input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #FFC555;
+}
+
+.colors > div:nth-child(2) label:before {
+  background-color: #FF9139 !important;
+}
+
+.colors > div:nth-child(2) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #FF9139;
+}
+
+.colors > div:nth-child(3) label:before {
+  background-color: #F23459 !important;
+}
+
+.colors > div:nth-child(3) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #F23459;
+}
+
+.colors > div:nth-child(4) label:before {
+  background-color: #3B64D2 !important;
+}
+
+.colors > div:nth-child(4) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #3B64D2;
+}
+
+.colors > div:nth-child(5) label:before {
+  background-color: #1292EE !important;
+}
+
+.colors > div:nth-child(5) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #1292EE;
+}
+
+.colors > div:nth-child(6) label:before {
+  background-color: #39AC6E !important;
+}
+
+.colors > div:nth-child(6) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #39AC6E;
+}
+
+.colors > div:nth-child(7) label:before {
+  background-color: #6269C5 !important;
+}
+
+.colors > div:nth-child(7) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #6269C5;
+
+}
+
+.colors > div:nth-child(8) label:before {
+  background-color: #D9DCFD !important;
+}
+
+.colors > div:nth-child(8) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #D9DCFD;
+}
+
+.colors > div:nth-child(9) label:before {
+  background-color: #7296E1 !important;
+}
+
+.colors > div:nth-child(9) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #7296E1;
+}
+
+.colors > div:nth-child(10) label:before {
+  background-color: #C2F0D7 !important;
+}
+
+
+.colors > div:nth-child(10) input:checked+label:before {
+  box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px #C2F0D7;
+}
+
+
+.seticon {
+  margin-left: auto;
+  margin-top: 3px;
+}
+
+.seticon:hover {
+  cursor: pointer;
+}
+
+.content {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.username {
+  position: relative;
+  display: inline-block;
+  color: white;
+  background: #1868FB;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 24px 24px 5px 24px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16), 0px 0px 1px rgba(0, 0, 0, 0.24);
+}
+
+.username.true {
+  display: inline-block;
+  color: white !important;
+  background: #1D2B36 !important;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 24px 24px 24px 5px !important; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16), 0px 0px 1px rgba(0, 0, 0, 0.24);
+}
+
+.username.placeholder {
+  display: inline-block;
+  color: #1292EE;
+  background: #fff;
+  border: 2px solid #1292EE;
+  margin: 30px auto 0;
+  padding: 16px;
+  border-radius: 24px 24px 5px 24px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16), 0px 0px 1px rgba(0, 0, 0, 0.24);
+}
+
+.username.blue {
+  background: #1292EE;
+}
+
+.username.green {
+  background: #39AC6E;
+}
+
+.username.yellow {
+  background: #FFC555;
+}
+
+.username.yellow.retro {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%), #FFC555;
+border: 1px solid #FFC555;
+}
+
+.username.yellow.retro:before {
+  background: #FFFFFF;
+  opacity: 0.3;
+  border-radius: 0px 0px 10px 10px;
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  left: 0px;
+  top: 0px;
+  content: "";
+  z-index: 2;
+}
+
+.username.yellow.retro span {
+  text-shadow: 0px 1px 0px #FFFFFF;
+}
+
+.username.orange {
+  background: #FF9139;
+}
+
+.username.red {
+  background: #F23459;
+}
+
+.username.indigo {
+  background: #3B64D2;
+}
+
+.username.purple {
+  background: #6269C5;
+}
+
+.username.lavender {
+  background: #D9DCFD;
+}
+
+.username.whaletail {
+  background: #7296E1;
+}
+
+.username.lime {
+  background: #C2F0D7;
+}
+
+.username.lime span, .username.yellow span, .username.lavender span {
+  color: #000;
+}
+
+.username.lime.true span, .username.yellow.true span, .username.lavender.true span {
+  color: #fff;
+}
+
+
+.username span {
+  font-size: 12px;
+  position: relative;
+  z-index: 10;
+}
+
+.username:hover {
+  cursor: pointer;
+}
+
+.role {
+  display: block;
+  font-size: 11px;
+  color: #253642;
+  padding: 12px 0;
+}
+
+.comment {
+  display: block;
+  font-size: 12px;
+  color: #748494;
+}
+
+.comment span {
+  color: #253642;
+}
+
+.icon-component:hover {
+  cursor: pointer !important;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 53px;
+  width: 100%;
+}
+
+.footer .input {
+  padding: 0 12px;
+  z-index: 5;
+  position: relative;
+}
+
+.footer .input input {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  border: 0 !important;
+  padding-right: 102px!important;
+}
+
+.footer .input.true input {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.footer .input input:focus:placeholder-shown, .footer .input input:focus {
+  outline: 0 !important;
+}
+
+.footer .input.yellow input {
+  background: #FFF9ED;
+}
+
+.footer .input.orange input {
+  background: #FFF4EA;
+}
+
+.footer .input.red input {
+  background: #FEEBEE;
+}
+
+.footer .input.indigo input {
+  background: #EBF0FB;
+}
+
+.footer .input.purple input {
+  background: #EFF0F9;
+}
+
+.footer .input.blue input {
+  background: #E7F4FD;
+}
+
+.footer .input.green input {
+  background: #EBF7F1;
+}
+
+.footer .input.lavender input {
+  background: #F0F1FE;
+}
+
+.footer .input.whaletail input {
+  background: #F1F5FC;
+}
+
+.footer .input.lime input {
+  background: #EDFBF3;
+}
+
+.footer button {
+  border-radius: 8px !important;
+}
+
+.footer button:hover {
+  cursor: pointer;
+}
+
+.footer button.yellow {
+  background: #FFC555;
+  color: #000;
+}
+
+.footer button.orange {
+  background: #FF9139;
+}
+
+.footer button.red {
+  background: #F23459;
+}
+
+.footer button.purple {
+  background: #6269C5;
+}
+
+
+.footer button.indigo {
+  background: #3B64D2;
+}
+
+.footer button.blue {
+  background: #1292EE;
+}
+
+.footer button.green {
+  background: #39AC6E;
+}
+
+.footer button.lavender {
+  background: #D9DCFD;
+  color: #000;
+}
+
+.footer button.whaletail {
+  background: #7296E1;
+}
+
+.footer button.lime {
+  background: #C2F0D7;
+  color: #000;
+}
+
+.footer.true button {
+  background: #1D2B36 !important;
+  color: #fff !important;
+}
+
+.message-holder {
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  right: 17px;
+  top: 4px;
+}
+
+.message-holder > div {
+  border-radius: 6px !important;
+}
+
+.message-holder > div, .message-holder > button {
+  display: flex !important;
+}
+
+.message-holder > button {
+  margin-left: 5px;
+}
+
+.emoji {
+  position: absolute;
+  right: -4px;
+  top: -56px;
+  background: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16), 0px 0px 1px rgba(0, 0, 0, 0.24);
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.emoji .icon-component {
+  font-size: 16px !important;
+}
+
+.emoji > div {
+  border-radius: 6px !important;
+}
+
+.emoji label {
+  padding: 0 !important;
+  margin:  0 !important;
+}
+
+.emoji label:hover {
+  cursor: pointer;
+}
+
+.emoji label:before {
+  border: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 6px !important;
+  font-size: 16px !important;
+}
+
+
+.emoji > div:first-child label:before {
+  content: "🦄";
+}
+
+.emoji > div:nth-child(2) label:before {
+  content: "💚";
+}
+
+.emoji > div:nth-child(3) label:before {
+  content: "🙂";
+}
+
+.emoji > div:nth-child(4) label:before {
+  content: "🙁";
+}
+
+.emoji > div:nth-child(5) label:before {
+  content: "👍";
+}
+
+.emoji > div:nth-child(6) label:before {
+  content: "👎";
+}
+
+.emoji input:checked+label:before {
+  background: none !important;
+}
+
+.emoji input {
+  display: none !important;
+}
+
+.switch-holder {
+  display: flex;
+}

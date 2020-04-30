@@ -1,0 +1,10 @@
+{
+  "name": "Chat Notes",
+  "id": "836358953686653979",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "index.html",
+  "relaunchButtons": [
+    {"command": "edit", "name": "Chat Notes"}
+  ]
+}
