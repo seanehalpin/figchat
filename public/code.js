@@ -1,4 +1,5 @@
-"use strict";
+'use strict';
+
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -12,4 +13,343 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
-***************************************************************************** */function e(e,t,i,o){return new(i||(i=Promise))((function(l,a){function r(e){try{c(o.next(e))}catch(e){a(e)}}function n(e){try{c(o.throw(e))}catch(e){a(e)}}function c(e){var t;e.done?l(e.value):(t=e.value,t instanceof i?t:new i((function(e){e(t)}))).then(r,n)}c((o=o.apply(e,t||[])).next())}))}(function(){return e(this,void 0,void 0,(function*(){yield figma.loadFontAsync({family:"Roboto",style:"Regular"})}))})().then(()=>{let e=figma.currentPage,t=figma.currentPage.children,i=figma.currentPage.selection;function o(e,t){figma.clientStorage.setAsync(e,JSON.stringify(t)).catch(e=>{console.log("error setting data")})}function l(t,i,o,l,a,r,n,c,s,g,f,h,d,m,p){const u=o;let y,R,S,b;if(!0===t){y=figma.createFrame(),R=figma.createFrame(),S=figma.createText(),b=figma.createText();let e=375,t=375;y.name=i,y.resize(e,t),y.layoutMode="VERTICAL",y.topRightRadius=16,y.topLeftRadius=16,y.bottomLeftRadius=16,y.bottomRightRadius=16,y.y=m,y.x=p,R.layoutMode="VERTICAL",R.resize(e,t),R.name="holder",R.horizontalPadding=16,R.verticalPadding=16,R.itemSpacing=10,S.name="Title",S.characters="Notes for "+d,S.textAlignHorizontal="CENTER",S.textAlignVertical="CENTER",S.resize(375,100),S.fontSize=16,b.name="Footer",b.characters="Chat by selecting '"+d+"' and running Chat Notes",b.textAlignHorizontal="CENTER",b.textAlignVertical="CENTER",b.resize(375,100),b.fontSize=11,b.fills=[{type:"SOLID",color:{r:85/255,g:101/255,b:117/255}}]}l=figma.createFrame(),a=figma.createFrame(),r=figma.createText(),n=figma.createText(),l.layoutMode="VERTICAL",l.layoutAlign="STRETCH",l.name="line item",l.itemSpacing=4,a.topRightRadius=24,a.topLeftRadius=24,a.bottomLeftRadius=24,a.bottomRightRadius=5,a.name="bubble",a.layoutAlign="MAX",r.characters=u,r.x=16,r.y=16,r.fontSize=13,r.name="Text",r.constraints={horizontal:"STRETCH",vertical:"STRETCH"},r.resize(r.width+2,r.height),r.textAutoResize="HEIGHT",n.characters=c,n.fills=[{type:"SOLID",color:{r:116/255,g:132/255,b:148/255}}],n.layoutAlign="MAX";let I=r.height+32,L=r.width+32;a.resize(L,I),!1===f&&("blue"===s&&(a.fills=[{type:"SOLID",color:{r:18/255,g:146/255,b:238/255}}],r.fills=[{type:"SOLID",color:{r:1,g:1,b:1}}]),"yellow"===s&&(a.fills=[{type:"SOLID",color:{r:1,g:197/255,b:85/255}}],r.fills=[{type:"SOLID",color:{r:0,g:0,b:0}}]),"orange"===s&&(a.fills=[{type:"SOLID",color:{r:1,g:145/255,b:57/255}}],r.fills=[{type:"SOLID",color:{r:1,g:1,b:1}}]),"red"===s&&(a.fills=[{type:"SOLID",color:{r:242/255,g:52/255,b:89/255}}],r.fills=[{type:"SOLID",color:{r:1,g:1,b:1}}]),"indigo"===s&&(a.fills=[{type:"SOLID",color:{r:59/255,g:100/255,b:210/255}}],r.fills=[{type:"SOLID",color:{r:1,g:1,b:1}}]),"green"===s&&(a.fills=[{type:"SOLID",color:{r:57/255,g:172/255,b:110/255}}],r.fills=[{type:"SOLID",color:{r:1,g:1,b:1}}]),"purple"===s&&(a.fills=[{type:"SOLID",color:{r:98/255,g:105/255,b:197/255}}],r.fills=[{type:"SOLID",color:{r:1,g:1,b:1}}]),"lavender"===s&&(a.fills=[{type:"SOLID",color:{r:217/255,g:220/255,b:253/255}}],r.fills=[{type:"SOLID",color:{r:0,g:0,b:0}}]),"whaletail"===s&&(a.fills=[{type:"SOLID",color:{r:114/255,g:150/255,b:225/255}}],r.fills=[{type:"SOLID",color:{r:1,g:1,b:1}}]),"lime"===s&&(a.fills=[{type:"SOLID",color:{r:194/255,g:240/255,b:215/255}}],r.fills=[{type:"SOLID",color:{r:0,g:0,b:0}}])),!0===f&&(a.fills=[{type:"SOLID",color:{r:29/255,g:43/255,b:54/255}}],r.fills=[{type:"SOLID",color:{r:1,g:1,b:1}}],a.topRightRadius=24,a.topLeftRadius=24,a.bottomLeftRadius=5,a.bottomRightRadius=24,a.layoutAlign="MIN",n.layoutAlign="MIN",n.characters=c+" 👑"),!0===h&&function(e,t,i,o,l){e.appendChild(t),t.appendChild(i),t.appendChild(o),i.appendChild(l);let a=l,r=i,n=l.height;console.log(n),a.width>315&&(r.layoutAlign="STRETCH",r.layoutMode="VERTICAL",r.horizontalPadding=16,r.verticalPadding=16,a.textAutoResize="NONE",a.resize(315,a.height),a.textAutoResize="HEIGHT")}(g,l,a,n,r),!1===h&&function(t,i,o,l,a,r,n,c){e.appendChild(t),t.appendChild(n),t.appendChild(i),t.appendChild(c),i.appendChild(o),o.appendChild(l),o.appendChild(a),l.appendChild(r);let s=r,g=l;s.width>315?(g.layoutAlign="STRETCH",g.layoutMode="VERTICAL",g.horizontalPadding=16,g.verticalPadding=16,s.textAutoResize="NONE",s.resize(315,s.height),s.textAutoResize="HEIGHT"):s.resize(s.width+2,s.height)}(y,R,l,a,n,r,S,b)}if(0===i.length)figma.closePlugin("⚠️ Please select a frame to comment on ⚠️");else{let e;figma.showUI(__html__,{width:380,height:255}),new Promise((e,t)=>{figma.clientStorage.getAsync("commentator").then(t=>{let i=t?JSON.parse(t):[];e(i),figma.ui.postMessage({commentator:i})}).catch(e=>{t(e)})}),new Promise((e,t)=>{figma.clientStorage.getAsync("color").then(t=>{let i=t?JSON.parse(t):[];e(i),figma.ui.postMessage({color:i})}).catch(e=>{t(e)})}),new Promise((e,t)=>{figma.clientStorage.getAsync("name").then(t=>{let i=t?JSON.parse(t):[];e(i),figma.ui.postMessage({name:i})}).catch(e=>{t(e)})});let a,r=0,n=0;i.forEach(t=>{"FRAME"===t.type&&(r=t.x,n=t.y,a=t.width,e=t.name,figma.ui.postMessage({getfile:e}))});let c=r+a+50,s="chatnotes__"+e;figma.ui.onmessage=i=>{if("add-message"===i.type){let a;if(t.forEach(e=>{e.name===s&&(a="found")}),"found"===a)t.forEach(t=>{"FRAME"===t.type&&t.name===s&&t.children.forEach(t=>{if("FRAME"===t.type&&"holder"===t.name){let o,a,r,g;l(!1,s,i.message,o,a,r,g,i.name,i.color,t,i.switch,!0,e,n,c)}})});else{let t,o,a,r,g;l(!0,s,i.message,t,o,a,r,i.name,i.color,g,i.switch,!1,e,n,c),figma.closePlugin()}o("color",i.color),o("name",i.name),o("commentator",i.switch)}}}});
+***************************************************************************** */
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function main() {
+    return __awaiter(this, void 0, void 0, function* () {
+        yield figma.loadFontAsync({ family: "Roboto", style: "Regular" });
+    });
+}
+main().then(() => {
+    let entirePage = figma.currentPage;
+    let pageFrames = figma.currentPage.children;
+    let nodes = figma.currentPage.selection;
+    let selectedLayers = nodes;
+    function errorMsg() {
+        figma.closePlugin('⚠️ Please select a frame to comment on ⚠️');
+    }
+    function setStorage(storageName, storageValue) {
+        figma.clientStorage.setAsync(storageName, JSON.stringify(storageValue)).catch(err => { console.log('error setting data'); });
+    }
+    function getSavedCommentator() {
+        return new Promise((success, error) => {
+            figma.clientStorage.getAsync('commentator').then(commentator => {
+                let data = (commentator) ? JSON.parse(commentator) : [];
+                success(data);
+                figma.ui.postMessage({
+                    'commentator': data
+                });
+                // console.log("commentator: " + data)
+            }).catch(err => {
+                error(err);
+            });
+        });
+    }
+    function getSavedColor() {
+        return new Promise((success, error) => {
+            figma.clientStorage.getAsync('color').then(color => {
+                let data = (color) ? JSON.parse(color) : [];
+                success(data);
+                figma.ui.postMessage({
+                    'color': data
+                });
+                // console.log("color: " + data)
+            }).catch(err => {
+                error(err);
+            });
+        });
+    }
+    function getSavedName() {
+        return new Promise((success, error) => {
+            figma.clientStorage.getAsync('name').then(name => {
+                let data = (name) ? JSON.parse(name) : [];
+                success(data);
+                figma.ui.postMessage({
+                    'name': data
+                });
+                // console.log("name: " + data)
+            }).catch(err => {
+                error(err);
+            });
+        });
+    }
+    // if chat exists, append newly create chat bubble to it
+    function appendToExisting(newchild, uiMessageHolder, uiBubble, uiName, uiText) {
+        newchild.appendChild(uiMessageHolder);
+        uiMessageHolder.appendChild(uiBubble);
+        uiMessageHolder.appendChild(uiName);
+        uiBubble.appendChild(uiText);
+        let updateUiText = uiText;
+        let updateUiBubble = uiBubble;
+        let uiTextHeight = uiText.height;
+        // console.log(uiTextHeight)
+        if (updateUiText.width > 315) {
+            updateUiBubble.layoutAlign = 'STRETCH';
+            updateUiBubble.layoutMode = 'VERTICAL';
+            updateUiBubble.horizontalPadding = 16;
+            updateUiBubble.verticalPadding = 16;
+            updateUiText.textAutoResize = "NONE";
+            updateUiText.resize(315, updateUiText.height);
+            updateUiText.textAutoResize = "HEIGHT";
+        }
+    }
+    // if chat doesnt exist, create it
+    function appendToNew(uiFrame, uiAutoLayout, uiMessageHolder, uiBubble, uiName, uiText, uiTitle, uiFooter) {
+        entirePage.appendChild(uiFrame);
+        uiFrame.appendChild(uiTitle);
+        uiFrame.appendChild(uiAutoLayout);
+        uiFrame.appendChild(uiFooter);
+        uiAutoLayout.appendChild(uiMessageHolder);
+        uiMessageHolder.appendChild(uiBubble);
+        uiMessageHolder.appendChild(uiName);
+        uiBubble.appendChild(uiText);
+        let updateUiText = uiText;
+        let updateUiBubble = uiBubble;
+        if (updateUiText.width > 315) {
+            updateUiBubble.layoutAlign = 'STRETCH';
+            updateUiBubble.layoutMode = 'VERTICAL';
+            updateUiBubble.horizontalPadding = 16;
+            updateUiBubble.verticalPadding = 16;
+            updateUiText.textAutoResize = "NONE";
+            updateUiText.resize(315, updateUiText.height);
+            updateUiText.textAutoResize = "HEIGHT";
+        }
+        else {
+            updateUiText.resize(updateUiText.width + 2, updateUiText.height);
+        }
+    }
+    // create the chat bubble
+    function makeBubble(newFrame, chatback, msgMesssage, uiMessageHolder, uiBubble, uiText, uiName, msgName, msgColor, newchild, msgSwitch, frameExist, frameName, frameY, frameX) {
+        const uiMessage = msgMesssage;
+        let uiFrame;
+        let uiAutoLayout;
+        let uiTitle;
+        let uiFooter;
+        let mainSize = 375;
+        if (newFrame === true) {
+            uiFrame = figma.createFrame();
+            uiAutoLayout = figma.createFrame();
+            uiTitle = figma.createText();
+            uiFooter = figma.createText();
+            let uiWidth = mainSize;
+            let uiHeight = mainSize;
+            uiFrame.name = chatback;
+            uiFrame.resize(uiWidth, uiHeight);
+            uiFrame.layoutMode = "VERTICAL";
+            uiFrame.topRightRadius = 16;
+            uiFrame.topLeftRadius = 16;
+            uiFrame.bottomLeftRadius = 16;
+            uiFrame.bottomRightRadius = 16;
+            uiFrame.setRelaunchData({ edit: "Frame Chat is a plugin that lets you chat directly inside a Figma frame" });
+            uiFrame.y = frameY;
+            uiFrame.x = frameX;
+            uiAutoLayout.layoutMode = "VERTICAL";
+            uiAutoLayout.resize(uiWidth, uiHeight);
+            uiAutoLayout.name = 'holder';
+            uiAutoLayout.horizontalPadding = 16;
+            uiAutoLayout.verticalPadding = 16;
+            uiAutoLayout.itemSpacing = 10;
+            uiTitle.name = 'Title';
+            uiTitle.characters = "Chat for " + frameName;
+            uiTitle.textAlignHorizontal = 'CENTER';
+            uiTitle.textAlignVertical = 'CENTER';
+            uiTitle.resize(mainSize, 100);
+            uiTitle.fontSize = 16;
+            uiFooter.name = 'Footer';
+            uiFooter.characters = "Chat by selecting this frame and running Frame Chat";
+            uiFooter.textAlignHorizontal = 'CENTER';
+            uiFooter.textAlignVertical = 'CENTER';
+            uiFooter.resize(mainSize, 100);
+            uiFooter.fontSize = 11;
+            uiFooter.fills = [{ type: 'SOLID', color: { r: 85 / 255, g: 101 / 255, b: 117 / 255 } }];
+        }
+        uiMessageHolder = figma.createFrame();
+        uiBubble = figma.createFrame();
+        uiText = figma.createText();
+        uiName = figma.createText();
+        uiMessageHolder.layoutMode = 'VERTICAL';
+        uiMessageHolder.layoutAlign = 'STRETCH';
+        uiMessageHolder.name = 'line item';
+        uiMessageHolder.itemSpacing = 4;
+        uiBubble.topRightRadius = 24;
+        uiBubble.topLeftRadius = 24;
+        uiBubble.bottomLeftRadius = 24;
+        uiBubble.bottomRightRadius = 10;
+        uiBubble.name = 'bubble';
+        uiBubble.layoutAlign = 'MAX';
+        uiText.characters = uiMessage;
+        uiText.x = 16;
+        uiText.y = 16;
+        uiText.fontSize = 13;
+        uiText.name = 'Text';
+        uiText.constraints = { horizontal: "STRETCH", vertical: "STRETCH" };
+        uiText.resize(uiText.width + 2, uiText.height);
+        uiText.textAutoResize = "HEIGHT";
+        uiName.characters = msgName;
+        uiName.fills = [{ type: 'SOLID', color: { r: 116 / 255, g: 132 / 255, b: 148 / 255 } }];
+        uiName.layoutAlign = 'MAX';
+        let uiMessageHeight = uiText.height + 32;
+        let uiMessageWidth = uiText.width + 32;
+        uiBubble.resize(uiMessageWidth, uiMessageHeight);
+        if (msgSwitch === false) {
+            if (msgColor === "blue") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 18 / 255, g: 146 / 255, b: 238 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+            }
+            if (msgColor === "yellow") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 255 / 255, g: 197 / 255, b: 85 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }];
+            }
+            if (msgColor === "orange") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 255 / 255, g: 145 / 255, b: 57 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+            }
+            if (msgColor === "red") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 242 / 255, g: 52 / 255, b: 89 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+            }
+            if (msgColor === "indigo") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 59 / 255, g: 100 / 255, b: 210 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+            }
+            if (msgColor === "green") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 57 / 255, g: 172 / 255, b: 110 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+            }
+            if (msgColor === "purple") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 98 / 255, g: 105 / 255, b: 197 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+            }
+            if (msgColor === "lavender") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 217 / 255, g: 220 / 255, b: 253 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }];
+            }
+            if (msgColor === "whaletail") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 114 / 255, g: 150 / 255, b: 225 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+            }
+            if (msgColor === "lime") {
+                uiBubble.fills = [{ type: 'SOLID', color: { r: 194 / 255, g: 240 / 255, b: 215 / 255 } }];
+                uiText.fills = [{ type: 'SOLID', color: { r: 0, g: 0, b: 0 } }];
+            }
+        }
+        if (msgSwitch === true) {
+            uiBubble.fills = [{ type: 'SOLID', color: { r: 29 / 255, g: 43 / 255, b: 54 / 255 } }];
+            uiText.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
+            uiBubble.topRightRadius = 24;
+            uiBubble.topLeftRadius = 24;
+            uiBubble.bottomLeftRadius = 10;
+            uiBubble.bottomRightRadius = 24;
+            uiBubble.layoutAlign = 'MIN';
+            uiName.layoutAlign = 'MIN';
+            uiName.characters = msgName + " 👑";
+        }
+        if (frameExist === true) {
+            appendToExisting(newchild, uiMessageHolder, uiBubble, uiName, uiText);
+        }
+        if (frameExist === false) {
+            appendToNew(uiFrame, uiAutoLayout, uiMessageHolder, uiBubble, uiName, uiText, uiTitle, uiFooter);
+        }
+    }
+    if (selectedLayers.length === 0) {
+        errorMsg();
+    }
+    else {
+        figma.showUI(__html__, { width: 380, height: 255 });
+        getSavedCommentator();
+        getSavedColor();
+        getSavedName();
+        let frameName;
+        let frameX = 0;
+        let frameY = 0;
+        let frameWidth;
+        let arrayTextFoundString = 0;
+        selectedLayers.forEach(node => {
+            if (node.type === 'FRAME') {
+                frameX = node.x;
+                frameY = node.y;
+                frameWidth = node.width;
+                frameName = node.name;
+                figma.ui.postMessage({
+                    'getfile': frameName
+                });
+            }
+            let arrayName = [];
+            let arrayNameText = "framechat__";
+            if (node.type === 'FRAME') {
+                arrayName.push(node.name);
+                JSON.stringify(arrayName);
+                let joined = arrayName.join();
+                if (joined.indexOf(arrayNameText) !== -1) {
+                    arrayTextFoundString = 1;
+                    // console.log(arrayTextFoundString)
+                }
+            }
+        });
+        let newFrameX = frameX + frameWidth + 50;
+        let chatback = "framechat__" + frameName;
+        figma.ui.onmessage = msg => {
+            if (msg.type === 'add-message') {
+                let make;
+                pageFrames.forEach(child => {
+                    if (child.name === chatback) {
+                        make = 'found';
+                    }
+                });
+                if (make === 'found') {
+                    pageFrames.forEach(child => {
+                        if (child.type === 'FRAME' && child.name === chatback) {
+                            child.children.forEach(newchild => {
+                                if (newchild.type === 'FRAME' && newchild.name === 'holder') {
+                                    let uiMessageHolder;
+                                    let uiBubble;
+                                    let uiText;
+                                    let uiName;
+                                    makeBubble(false, chatback, msg.message, uiMessageHolder, uiBubble, uiText, uiName, msg.name, msg.color, newchild, msg.switch, true, frameName, frameY, newFrameX);
+                                }
+                            });
+                        }
+                    });
+                }
+                // console.log(make)
+                if (arrayTextFoundString >= 1) {
+                    selectedLayers.forEach(child => {
+                        if (child.type === 'FRAME') {
+                            child.children.forEach(newchild => {
+                                if (newchild.type === 'FRAME' && newchild.name === 'holder') {
+                                    let uiMessageHolder;
+                                    let uiBubble;
+                                    let uiText;
+                                    let uiName;
+                                    makeBubble(false, chatback, msg.message, uiMessageHolder, uiBubble, uiText, uiName, msg.name, msg.color, newchild, msg.switch, true, frameName, frameY, newFrameX);
+                                }
+                            });
+                        }
+                    });
+                }
+                if (make === undefined && arrayTextFoundString === 0) {
+                    let uiMessageHolder;
+                    let uiBubble;
+                    let uiText;
+                    let uiName;
+                    let newchild;
+                    makeBubble(true, chatback, msg.message, uiMessageHolder, uiBubble, uiText, uiName, msg.name, msg.color, newchild, msg.switch, false, frameName, frameY, newFrameX);
+                    figma.closePlugin();
+                }
+                setStorage('color', msg.color);
+                setStorage('name', msg.name);
+                setStorage('commentator', msg.switch);
+            }
+        };
+    }
+});

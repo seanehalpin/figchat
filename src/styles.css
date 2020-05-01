@@ -187,7 +187,7 @@ input.input {
   background: #1868FB;
   margin: 0 auto;
   padding: 16px;
-  border-radius: 24px 24px 5px 24px;
+  border-radius: 24px 24px 10px 24px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16), 0px 0px 1px rgba(0, 0, 0, 0.24);
 }
 
@@ -197,7 +197,7 @@ input.input {
   background: #1D2B36 !important;
   margin: 0 auto;
   padding: 16px;
-  border-radius: 24px 24px 24px 5px !important; 
+  border-radius: 24px 24px 24px 10px !important; 
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16), 0px 0px 1px rgba(0, 0, 0, 0.24);
 }
 
@@ -208,7 +208,7 @@ input.input {
   border: 2px solid #1292EE;
   margin: 30px auto 0;
   padding: 16px;
-  border-radius: 24px 24px 5px 24px;
+  border-radius: 24px 24px 10px 24px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16), 0px 0px 1px rgba(0, 0, 0, 0.24);
 }
 

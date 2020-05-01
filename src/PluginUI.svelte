@@ -36,7 +36,8 @@
       message = emojiValue;
     } else {
       message = message + emojiValue;
-    } 
+    }
+    emojiValue = ""; 
   }
 
   function addMessage() {
@@ -163,5 +164,4 @@
     <Button on:click={toggle} bind:class={add}>Update</Button>
   </div>
   {/if}
-  
 </div>

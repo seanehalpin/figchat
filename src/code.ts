@@ -82,7 +82,7 @@ main().then(() => {
     let updateUiBubble = uiBubble
     let uiTextHeight = uiText.height
 
-    console.log(uiTextHeight)
+    // console.log(uiTextHeight)
 
     if (updateUiText.width > 315){
       updateUiBubble.layoutAlign = 'STRETCH'
@@ -154,6 +154,8 @@ main().then(() => {
       uiFrame.bottomLeftRadius = 16
       uiFrame.bottomRightRadius = 16
 
+      uiFrame.setRelaunchData({edit: "Frame Chat is a plugin that lets you chat directly inside a Figma frame"})
+
       uiFrame.y = frameY
       uiFrame.x = frameX
 
@@ -165,14 +167,14 @@ main().then(() => {
       uiAutoLayout.itemSpacing = 10
 
       uiTitle.name = 'Title'
-      uiTitle.characters = "Notes for " + frameName
+      uiTitle.characters = "Chat for " + frameName
       uiTitle.textAlignHorizontal = 'CENTER'
       uiTitle.textAlignVertical = 'CENTER'
       uiTitle.resize(mainSize,100)
       uiTitle.fontSize = 16
 
       uiFooter.name = 'Footer'
-      uiFooter.characters = "Chat by selecting '" + frameName + "' and running Chat Notes"
+      uiFooter.characters = "Chat by selecting this frame and running Frame Chat"
       uiFooter.textAlignHorizontal = 'CENTER'
       uiFooter.textAlignVertical = 'CENTER'
       uiFooter.resize(mainSize,100)
@@ -193,7 +195,7 @@ main().then(() => {
     uiBubble.topRightRadius = 24
     uiBubble.topLeftRadius = 24
     uiBubble.bottomLeftRadius = 24
-    uiBubble.bottomRightRadius = 5
+    uiBubble.bottomRightRadius = 10
     uiBubble.name = 'bubble'
     uiBubble.layoutAlign = 'MAX'
 
@@ -264,7 +266,7 @@ main().then(() => {
       uiText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}]
       uiBubble.topRightRadius = 24
       uiBubble.topLeftRadius = 24
-      uiBubble.bottomLeftRadius = 5
+      uiBubble.bottomLeftRadius = 10
       uiBubble.bottomRightRadius = 24
       uiBubble.layoutAlign = 'MIN'
       uiName.layoutAlign = 'MIN'
@@ -295,6 +297,7 @@ main().then(() => {
     let frameY = 0
     let frameWidth
     let arrayTextFound = []
+    let arrayTextFoundString = 0
 
     selectedLayers.forEach(node => {
       if(node.type === 'FRAME') {
@@ -307,10 +310,22 @@ main().then(() => {
         })
       }
 
+      let arrayName = []
+      let arrayNameText = "framechat__"
+      if (node.type === 'FRAME'){
+        arrayName.push(node.name)
+        JSON.stringify(arrayName)
+        let joined = arrayName.join()
+        if (joined.indexOf(arrayNameText) !== -1){
+          arrayTextFound.push("ischat")
+          arrayTextFoundString = 1
+          // console.log(arrayTextFoundString)
+        }
+      }
     })
 
     let newFrameX = frameX + frameWidth + 50
-    let chatback = "chatnotes__" + frameName
+    let chatback = "framechat__" + frameName
 
     figma.ui.onmessage = msg => {
 
@@ -341,9 +356,30 @@ main().then(() => {
               })
             }
           })
+        }
 
-        } else {
-          
+        // console.log(make)
+        
+        if (arrayTextFoundString >= 1) {
+
+          selectedLayers.forEach(child => {
+            if(child.type=== 'FRAME'){
+              child.children.forEach(newchild => {
+                if(newchild.type === 'FRAME' && newchild.name === 'holder'){
+                  let uiMessageHolder
+                  let uiBubble
+                  let uiText
+                  let uiName
+                  makeBubble(false,chatback,msg.message,uiMessageHolder,
+                    uiBubble,uiText,uiName,msg.name,msg.color,newchild,
+                    msg.switch,true,frameName,frameY,newFrameX)
+                }
+              })
+            }
+          })
+        }
+
+        if(make === undefined && arrayTextFoundString === 0) {
           let uiMessageHolder
           let uiBubble
           let uiText
