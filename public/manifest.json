@@ -1,10 +1,10 @@
 {
-  "name": "Frame Chat",
+  "name": "Figchat",
   "id": "836358953686653979",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "index.html",
   "relaunchButtons": [
-    {"command": "edit", "name": "Frame Chat"}
+    {"command": "edit", "name": "Figchat"}
   ]
 }

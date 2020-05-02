@@ -84,7 +84,8 @@
 
   {#if !settings.settingsOn}
 
-    <IconButton iconName={IconAdjust} on:click={toggle} bind:class={seticon}/>
+    <IconButton iconName={IconAdjust} bind:class={seticon} on:click={toggle} />
+    
     <div class="content">
 
     {#if username <=0 }

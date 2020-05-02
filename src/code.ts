@@ -97,7 +97,6 @@ main().then(() => {
 
     // if chat doesnt exist, create it
 
-
   function appendToNew(uiFrame,uiAutoLayout,uiMessageHolder,uiBubble,uiName,uiText,uiTitle,uiFooter){
 
     entirePage.appendChild(uiFrame)
@@ -154,7 +153,7 @@ main().then(() => {
       uiFrame.bottomLeftRadius = 16
       uiFrame.bottomRightRadius = 16
 
-      uiFrame.setRelaunchData({edit: "Frame Chat is a plugin that lets you chat directly inside a Figma frame"})
+      uiFrame.setRelaunchData({edit: "Press to launch Figchat and add your comments"})
 
       uiFrame.y = frameY
       uiFrame.x = frameX
@@ -174,7 +173,7 @@ main().then(() => {
       uiTitle.fontSize = 16
 
       uiFooter.name = 'Footer'
-      uiFooter.characters = "Chat by selecting this frame and running Frame Chat"
+      uiFooter.characters = "Chat by selecting this frame and running Figchat"
       uiFooter.textAlignHorizontal = 'CENTER'
       uiFooter.textAlignVertical = 'CENTER'
       uiFooter.resize(mainSize,100)
@@ -280,6 +279,8 @@ main().then(() => {
     if (frameExist === false) {
       appendToNew(uiFrame,uiAutoLayout,uiMessageHolder,uiBubble,uiName,uiText,uiTitle,uiFooter)
     }
+
+    figma.notify("chat added!")
     
   }
 
@@ -311,7 +312,7 @@ main().then(() => {
       }
 
       let arrayName = []
-      let arrayNameText = "framechat__"
+      let arrayNameText = "figchat__"
       if (node.type === 'FRAME'){
         arrayName.push(node.name)
         JSON.stringify(arrayName)
@@ -325,7 +326,7 @@ main().then(() => {
     })
 
     let newFrameX = frameX + frameWidth + 50
-    let chatback = "framechat__" + frameName
+    let chatback = "figchat__" + frameName
 
     figma.ui.onmessage = msg => {
 
