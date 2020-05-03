@@ -9,9 +9,9 @@ main().then(() => {
   let nodes = figma.currentPage.selection
   let selectedLayers = nodes
 
-  let getCommentator;
-  let getColor;
-  let getName;
+  let getCommentator
+  let getColor
+  let getName
 
   function errorMsg() {
     figma.closePlugin('⚠️ Please select a frame to comment on ⚠️');
@@ -128,7 +128,7 @@ main().then(() => {
 
   function makeBubble(newFrame,chatback,msgMesssage,uiMessageHolder,
     uiBubble,uiText,uiName,msgName,msgColor,newchild,
-    msgSwitch,frameExist,frameName,frameY,frameX){
+    msgSwitch,frameExist,frameName,frameY,frameX,msgDark){
     
     const uiMessage = msgMesssage
     let uiFrame
@@ -164,9 +164,10 @@ main().then(() => {
       uiAutoLayout.horizontalPadding = 16
       uiAutoLayout.verticalPadding = 16
       uiAutoLayout.itemSpacing = 10
+      uiAutoLayout.fills = []
 
       uiTitle.name = 'Title'
-      uiTitle.characters = "Chat for " + frameName
+      uiTitle.characters = "Chat for # " + frameName
       uiTitle.textAlignHorizontal = 'CENTER'
       uiTitle.textAlignVertical = 'CENTER'
       uiTitle.resize(mainSize,100)
@@ -179,6 +180,13 @@ main().then(() => {
       uiFooter.resize(mainSize,100)
       uiFooter.fontSize = 11
       uiFooter.fills = [{type: 'SOLID', color: {r: 85/255, g: 101/255, b: 117/255}}]
+
+      if(msgDark === true) {
+        uiFrame.fills = [{type: 'SOLID', color: {r: 29/255, g: 43/255, b: 54/255}}]
+        uiFooter.fills = [{type: 'SOLID', color: {r: 165/255, g: 178/255, b: 189/255}}]
+        uiTitle.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}]
+      }
+
     }
     
     uiMessageHolder = figma.createFrame()
@@ -190,6 +198,7 @@ main().then(() => {
     uiMessageHolder.layoutAlign = 'STRETCH'
     uiMessageHolder.name = 'line item'
     uiMessageHolder.itemSpacing = 4
+    uiMessageHolder.fills = []
 
     uiBubble.topRightRadius = 24
     uiBubble.topLeftRadius = 24
@@ -208,7 +217,7 @@ main().then(() => {
     uiText.textAutoResize = "HEIGHT"
 
     uiName.characters = msgName
-    uiName.fills = [{type: 'SOLID', color: {r: 116/255, g: 132/255, b: 148/255}}]
+    uiName.fills = [{type: 'SOLID', color: {r:  147/255, g: 161/255, b: 176/255}}]
     uiName.layoutAlign = 'MAX'
 
     let uiMessageHeight = uiText.height + 32
@@ -261,7 +270,7 @@ main().then(() => {
     }
 
     if(msgSwitch === true) {
-      uiBubble.fills = [{type: 'SOLID', color: {r: 29/255, g: 43/255, b: 54/255}}]
+      uiBubble.fills = [{type: 'SOLID', color: {r: 41/255, g: 67/255, b: 81/255}}]
       uiText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}]
       uiBubble.topRightRadius = 24
       uiBubble.topLeftRadius = 24
@@ -320,25 +329,34 @@ main().then(() => {
         if (joined.indexOf(arrayNameText) !== -1){
           arrayTextFound.push("ischat")
           arrayTextFoundString = 1
-          // console.log(arrayTextFoundString)
+          
+          figma.ui.postMessage({
+            'newframe': false
+          })
         }
       }
     })
 
     let newFrameX = frameX + frameWidth + 50
     let chatback = "figchat__" + frameName
+    let exisitingChatback = frameName
+
+    let make
+
+    pageFrames.forEach(child => {
+      if(child.name === chatback) {
+        make = 'found'
+        figma.ui.postMessage({
+          'newframe': false
+        })
+      }
+    })
 
     figma.ui.onmessage = msg => {
 
       if (msg.type === 'add-message') {
 
-        let make
-
-        pageFrames.forEach(child => {
-          if(child.name === chatback) {
-            make = 'found'
-          }
-        })
+        console.log(msg.dark)
 
         if (make === 'found') {
           
@@ -352,7 +370,7 @@ main().then(() => {
                   let uiName
                   makeBubble(false,chatback,msg.message,uiMessageHolder,
                     uiBubble,uiText,uiName,msg.name,msg.color,newchild,
-                    msg.switch,true,frameName,frameY,newFrameX)
+                    msg.switch,true,frameName,frameY,newFrameX,msg.dark)
                 }
               })
             }
@@ -373,7 +391,7 @@ main().then(() => {
                   let uiName
                   makeBubble(false,chatback,msg.message,uiMessageHolder,
                     uiBubble,uiText,uiName,msg.name,msg.color,newchild,
-                    msg.switch,true,frameName,frameY,newFrameX)
+                    msg.switch,true,frameName,frameY,newFrameX,msg.dark)
                 }
               })
             }
@@ -387,7 +405,7 @@ main().then(() => {
           let uiName
           let newchild
           makeBubble(true,chatback,msg.message,uiMessageHolder,uiBubble,
-            uiText,uiName,msg.name,msg.color,newchild,msg.switch,false,frameName,frameY,newFrameX)
+            uiText,uiName,msg.name,msg.color,newchild,msg.switch,false,frameName,frameY,newFrameX,msg.dark)
           figma.closePlugin();
         }
 

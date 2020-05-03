@@ -11,12 +11,14 @@
   let comment = 'Comment...';
   let radioValue = 'blue';
   let switchValue = false;
+  let switchDarkMode = false;
   let retroValue = false;
   let emojiValue;
   let add = 'add';
   let seticon = 'seticon';
   let username = null;
   let filename = 'this frame'
+  let darkMode = true;
 
   let settings = { settingsOn: false };
   let emojis = { emojisOn: false };
@@ -46,7 +48,8 @@
       'switch': switchValue,
       'message': message,
       'name': username,
-      'color': radioValue
+      'color': radioValue,
+      'dark' : switchDarkMode
     } }, '*');
     
     setTimeout(function(){ 
@@ -74,6 +77,11 @@
 
     if (event.data.pluginMessage.getfile) {
       filename = event.data.pluginMessage.getfile
+    }
+
+    if (event.data.pluginMessage.newframe === false) {
+      console.log("chat exists, hide dark mode")
+      darkMode = false
     }
 
   }
@@ -145,6 +153,9 @@
   <Input bind:placeholder={yourName} iconName={IconSmiley} bind:value={username} class="mb-xxsmall"/>
   <div class="switch-holder">
     <Switch value="false" bind:checked={switchValue}>Chat owner</Switch>
+    {#if darkMode}
+    <Switch value="false" bind:checked={switchDarkMode}>Dark Mode</Switch>
+    {/if}
   </div>
 
   <div class="colors {switchValue}">

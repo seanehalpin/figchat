@@ -194,7 +194,7 @@ input.input {
 .username.true {
   display: inline-block;
   color: white !important;
-  background: #1D2B36 !important;
+  background: #294351 !important;
   margin: 0 auto;
   padding: 16px;
   border-radius: 24px 24px 24px 10px !important; 
@@ -436,7 +436,7 @@ border: 1px solid #FFC555;
 }
 
 .footer.true button {
-  background: #1D2B36 !important;
+  background: #294351 !important;
   color: #fff !important;
 }
 
