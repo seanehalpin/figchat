@@ -114,14 +114,9 @@
       <span class="role">owner 👑</span>
       {/if}
       <div class="comment">Add your comments for <span># {filename}</span></div>
-
       <div class="footer {switchValue}">
         <Input bind:placeholder={comment} bind:value={message} class="message-input {radioValue} {switchValue}"/>
         <div class="message-holder">
-
-        {#if !emojis.emojisOn}
-          <div></div>
-        {/if}
         {#if emojis.emojisOn}
         <div class="emoji" transition:fly="{{ y: 10, duration: 200 }}">
           <Radio bind:group={emojiValue} on:change={emojiChange} value="🦄"></Radio>
