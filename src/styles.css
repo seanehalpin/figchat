@@ -531,3 +531,80 @@ border: 1px solid #FFC555;
 .switch-holder {
   display: flex;
 }
+
+.vote {
+  display: flex;
+  max-width: 280px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vote-text {
+  font-size: 11px;
+  color: #253642;
+}
+
+.vote span {
+  display: block;
+  margin: 0  auto;
+}
+
+.vote .voter-icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 0;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.vote .voter-icon:hover {
+  background: none;
+}
+
+.vote .voter-icon:focus, .vote .voter-icon:active {
+  outline: none;
+  border: 0;
+}
+
+.vote .voter-icon:focus .icon-component, .vote .voter-icon:active .icon-component {
+  border-color: #56C288;
+}
+.vote .voter-icon .icon-component {
+  font-size: 16px !important;
+  border: 2px solid #E5E9EC;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 10;
+}
+
+.vote .voter-icon > div {
+  background-color: #fff;
+}
+
+.vote .voter-icon:after {
+  content: "";
+  width: 64px;
+  height: 64px;
+  background: #56C288;
+  z-index: 1;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  transform: translate3d(-10px,-10px,0) scale(0.8);
+  transform-origin: 50% 50%;
+  border-radius: 50%;
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.vote .voter-icon:focus:after {
+  transform: translate3d(-10px,-10px,0) scale(1);
+  opacity: 0.4;
+}

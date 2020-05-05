@@ -211,10 +211,12 @@ main().then(() => {
     uiText.x = 16
     uiText.y = 16
     uiText.fontSize = 13
+    uiText.lineHeight = {unit: 'PIXELS', value: 18}
     uiText.name = 'Text'
     uiText.constraints = { horizontal: "STRETCH", vertical: "STRETCH" };
     uiText.resize(uiText.width + 2, uiText.height)
     uiText.textAutoResize = "HEIGHT"
+    
 
     uiName.characters = msgName
     uiName.fills = [{type: 'SOLID', color: {r:  147/255, g: 161/255, b: 176/255}}]
@@ -353,6 +355,10 @@ main().then(() => {
     })
 
     figma.ui.onmessage = msg => {
+
+      if (msg.type === 'add-vote') {
+        console.log(msg.name + ": voted " + msg.vote)
+      }
 
       if (msg.type === 'add-message') {
 
