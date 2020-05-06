@@ -137,7 +137,7 @@ main().then(() => {
     let uiFooter
     let mainSize = 375
 
-    if(newFrame === true) {
+    if (newFrame === true) {
       uiFrame = figma.createFrame()
       uiAutoLayout = figma.createFrame()
       uiTitle = figma.createText()
@@ -181,7 +181,7 @@ main().then(() => {
       uiFooter.fontSize = 11
       uiFooter.fills = [{type: 'SOLID', color: {r: 85/255, g: 101/255, b: 117/255}}]
 
-      if(msgDark === true) {
+      if (msgDark === true) {
         uiFrame.fills = [{type: 'SOLID', color: {r: 29/255, g: 43/255, b: 54/255}}]
         uiFooter.fills = [{type: 'SOLID', color: {r: 165/255, g: 178/255, b: 189/255}}]
         uiTitle.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}]
@@ -225,7 +225,7 @@ main().then(() => {
 
     uiBubble.resize(uiMessageWidth,uiMessageHeight)
 
-    if(msgSwitch === false) {
+    if (msgSwitch === false) {
 
       if (msgColor === "blue") {
         uiBubble.fills = [{type: 'SOLID', color: {r: 18/255, g: 146/255, b: 238/255}}]
@@ -269,7 +269,7 @@ main().then(() => {
       }
     }
 
-    if(msgSwitch === true) {
+    if (msgSwitch === true) {
       uiBubble.fills = [{type: 'SOLID', color: {r: 41/255, g: 67/255, b: 81/255}}]
       uiText.fills = [{type: 'SOLID', color: {r: 1, g: 1, b: 1}}]
       uiBubble.topRightRadius = 24
@@ -310,7 +310,7 @@ main().then(() => {
     let arrayTextFoundString = 0
 
     selectedLayers.forEach(node => {
-      if(node.type === 'FRAME') {
+      if (node.type === 'FRAME') {
         frameX = node.x
         frameY = node.y
         frameWidth = node.width
@@ -344,7 +344,7 @@ main().then(() => {
     let make
 
     pageFrames.forEach(child => {
-      if(child.name === chatback) {
+      if (child.name === chatback) {
         make = 'found'
         figma.ui.postMessage({
           'newframe': false
@@ -356,14 +356,12 @@ main().then(() => {
 
       if (msg.type === 'add-message') {
 
-        console.log(msg.dark)
-
         if (make === 'found') {
           
           pageFrames.forEach(child => {
-            if(child.type=== 'FRAME' && child.name === chatback){
+            if (child.type=== 'FRAME' && child.name === chatback){
               child.children.forEach(newchild => {
-                if(newchild.type === 'FRAME' && newchild.name === 'holder'){
+                if (newchild.type === 'FRAME' && newchild.name === 'holder'){
                   let uiMessageHolder
                   let uiBubble
                   let uiText
@@ -377,14 +375,12 @@ main().then(() => {
           })
         }
 
-        // console.log(make)
-        
         if (arrayTextFoundString >= 1) {
 
           selectedLayers.forEach(child => {
-            if(child.type=== 'FRAME'){
+            if (child.type=== 'FRAME'){
               child.children.forEach(newchild => {
-                if(newchild.type === 'FRAME' && newchild.name === 'holder'){
+                if (newchild.type === 'FRAME' && newchild.name === 'holder'){
                   let uiMessageHolder
                   let uiBubble
                   let uiText
@@ -398,7 +394,7 @@ main().then(() => {
           })
         }
 
-        if(make === undefined && arrayTextFoundString === 0) {
+        if (make === undefined && arrayTextFoundString === 0) {
           let uiMessageHolder
           let uiBubble
           let uiText

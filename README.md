@@ -1,6 +1,6 @@
 # Figchat
 
-Plugin for building chat artboards inside fimga
+Plugin for building chat artboards inside Figma
 
 Built with [Figma Plugin DS Svelte](https://github.com/thomas-lowry/figma-plugin-ds-svelte)
 
