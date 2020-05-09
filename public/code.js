@@ -323,7 +323,6 @@ main().then(() => {
                 console.log(msg.name + ": voted " + msg.vote);
             }
             if (msg.type === 'add-message') {
-                console.log(msg.dark);
                 if (make === 'found') {
                     pageFrames.forEach(child => {
                         if (child.type === 'FRAME' && child.name === chatback) {
@@ -339,7 +338,6 @@ main().then(() => {
                         }
                     });
                 }
-                // console.log(make)
                 if (arrayTextFoundString >= 1) {
                     selectedLayers.forEach(child => {
                         if (child.type === 'FRAME') {

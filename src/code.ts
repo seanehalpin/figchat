@@ -362,8 +362,6 @@ main().then(() => {
 
       if (msg.type === 'add-message') {
 
-        console.log(msg.dark)
-
         if (make === 'found') {
           
           pageFrames.forEach(child => {
@@ -382,8 +380,6 @@ main().then(() => {
             }
           })
         }
-
-        // console.log(make)
         
         if (arrayTextFoundString >= 1) {
 
