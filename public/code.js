@@ -104,10 +104,11 @@ main().then(() => {
         }
     }
     // if chat doesnt exist, create it
-    function appendToNew(uiFrame, uiAutoLayout, uiMessageHolder, uiBubble, uiName, uiText, uiTitle, uiFooter) {
+    function appendToNew(uiFrame, uiAutoLayout, uiMessageHolder, uiBubble, uiName, uiText, uiTitle, uiVote, uiFooter) {
         entirePage.appendChild(uiFrame);
         uiFrame.appendChild(uiTitle);
         uiFrame.appendChild(uiAutoLayout);
+        uiFrame.appendChild(uiVote);
         uiFrame.appendChild(uiFooter);
         uiAutoLayout.appendChild(uiMessageHolder);
         uiMessageHolder.appendChild(uiBubble);
@@ -135,6 +136,7 @@ main().then(() => {
         let uiAutoLayout;
         let uiTitle;
         let uiFooter;
+        let uiVote;
         let mainSize = 375;
         if (newFrame === true) {
             uiFrame = figma.createFrame();
@@ -178,6 +180,78 @@ main().then(() => {
                 uiFooter.fills = [{ type: 'SOLID', color: { r: 165 / 255, g: 178 / 255, b: 189 / 255 } }];
                 uiTitle.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
             }
+            // voting
+            let uiPos;
+            let uiNeg;
+            let uiPosIcon;
+            let uiNegIcon;
+            let uiPosValue;
+            let uiNegValue;
+            uiVote = figma.createFrame();
+            uiPos = figma.createFrame();
+            uiNeg = figma.createFrame();
+            uiPosIcon = figma.createText();
+            uiNegIcon = figma.createText();
+            uiPosValue = figma.createText();
+            uiNegValue = figma.createText();
+            uiVote.visible = false;
+            uiVote.layoutMode = 'HORIZONTAL';
+            uiVote.layoutAlign = 'STRETCH';
+            uiVote.verticalPadding = 16;
+            uiVote.itemSpacing = 10;
+            uiVote.fills = [];
+            uiVote.name = 'voter';
+            uiVote.fills = [];
+            uiPos.strokeWeight = 2;
+            uiPos.strokes = [{ type: 'SOLID', color: { r: 197 / 255, g: 206 / 255, b: 214 / 255 } }];
+            uiPos.topRightRadius = 50;
+            uiPos.topLeftRadius = 50;
+            uiPos.bottomLeftRadius = 50;
+            uiPos.bottomRightRadius = 50;
+            uiPos.name = 'positive';
+            uiPos.layoutAlign = 'CENTER';
+            uiPos.layoutMode = 'HORIZONTAL';
+            uiPos.verticalPadding = 14;
+            uiPos.horizontalPadding = 20;
+            uiPos.itemSpacing = 6;
+            uiPos.resizeWithoutConstraints(60, 52);
+            uiPos.fills = [];
+            uiNeg.strokes = [{ type: 'SOLID', color: { r: 197 / 255, g: 206 / 255, b: 214 / 255 } }];
+            uiNeg.topRightRadius = 50;
+            uiNeg.topLeftRadius = 50;
+            uiNeg.bottomLeftRadius = 50;
+            uiNeg.bottomRightRadius = 50;
+            uiNeg.name = 'negative';
+            uiNeg.layoutAlign = 'CENTER';
+            uiNeg.layoutMode = 'HORIZONTAL';
+            uiNeg.verticalPadding = 14;
+            uiNeg.horizontalPadding = 20;
+            uiNeg.itemSpacing = 6;
+            uiNeg.strokeWeight = 2;
+            uiNeg.resizeWithoutConstraints(60, 52);
+            uiNeg.fills = [];
+            uiPosIcon.characters = "👍";
+            uiPosIcon.fontSize = 16;
+            uiPosIcon.layoutAlign = 'CENTER';
+            uiNegIcon.characters = "👎";
+            uiNegIcon.fontSize = 16;
+            uiNegIcon.layoutAlign = 'CENTER';
+            uiPosValue.characters = "0";
+            uiPosValue.fontSize = 16;
+            uiPosValue.fills = [{ type: 'SOLID', color: { r: 147 / 255, g: 161 / 255, b: 176 / 255 } }];
+            uiPosValue.name = 'count-pos';
+            uiPosValue.layoutAlign = 'CENTER';
+            uiNegValue.characters = "0";
+            uiNegValue.fontSize = 16;
+            uiNegValue.fills = [{ type: 'SOLID', color: { r: 147 / 255, g: 161 / 255, b: 176 / 255 } }];
+            uiNegValue.name = 'count-neg';
+            uiNegValue.layoutAlign = 'CENTER';
+            uiNeg.appendChild(uiNegIcon);
+            uiNeg.appendChild(uiNegValue);
+            uiPos.appendChild(uiPosIcon);
+            uiPos.appendChild(uiPosValue);
+            uiVote.appendChild(uiPos);
+            uiVote.appendChild(uiNeg);
         }
         uiMessageHolder = figma.createFrame();
         uiBubble = figma.createFrame();
@@ -266,7 +340,7 @@ main().then(() => {
             appendToExisting(newchild, uiMessageHolder, uiBubble, uiName, uiText);
         }
         if (frameExist === false) {
-            appendToNew(uiFrame, uiAutoLayout, uiMessageHolder, uiBubble, uiName, uiText, uiTitle, uiFooter);
+            appendToNew(uiFrame, uiAutoLayout, uiMessageHolder, uiBubble, uiName, uiText, uiTitle, uiVote, uiFooter);
         }
         figma.notify("chat added!");
     }
@@ -342,12 +416,19 @@ main().then(() => {
                     selectedLayers.forEach(child => {
                         if (child.type === 'FRAME') {
                             child.children.forEach(newchild => {
+                                // find th holder frame for chats
                                 if (newchild.type === 'FRAME' && newchild.name === 'holder') {
                                     let uiMessageHolder;
                                     let uiBubble;
                                     let uiText;
                                     let uiName;
                                     makeBubble(false, chatback, msg.message, uiMessageHolder, uiBubble, uiText, uiName, msg.name, msg.color, newchild, msg.switch, true, frameName, frameY, newFrameX, msg.dark);
+                                }
+                                // find a holder frame for votes
+                                if (newchild.type === 'FRAME' && newchild.name === 'voter') {
+                                    newchild.children.forEach(element => {
+                                        if (element.name !== msg.name) ;
+                                    });
                                 }
                             });
                         }

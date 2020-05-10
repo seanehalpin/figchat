@@ -113,6 +113,8 @@
 
   }
 
+  console.log(voteValue)
+
 </script>
 
 <div class="wrapper p-xxsmall">

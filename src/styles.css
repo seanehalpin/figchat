@@ -573,8 +573,13 @@ border: 1px solid #FFC555;
 .vote .voter-icon:focus .icon-component, .vote .voter-icon:active .icon-component {
   border-color: #56C288;
 }
+
+.vote .voter-icon:hover .icon-component {
+  border-color: #56C288;
+}
+
 .vote .voter-icon .icon-component {
-  font-size: 16px !important;
+  font-size: 21px !important;
   border: 2px solid #E5E9EC;
   border-radius: 50%;
   width: 44px;
@@ -604,7 +609,11 @@ border: 1px solid #FFC555;
   opacity: 0;
 }
 
-.vote .voter-icon:focus:after {
+.vote .voter-icon:focus:after, .vote .voter-icon:hover:after {
   transform: translate3d(-10px,-10px,0) scale(1);
   opacity: 0.4;
+}
+
+.vote .voter-icon:focus:after {
+  transform: translate3d(-10px,-10px,0) scale(1.2);
 }
