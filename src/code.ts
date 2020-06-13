@@ -21,6 +21,8 @@ main().then(() => {
     figma.clientStorage.setAsync(storageName, JSON.stringify(storageValue)).catch(err => { console.log('error setting data') })
   }
 
+  // set promises
+
   function getSavedCommentator() {
     return new Promise((success, error) => {
       figma.clientStorage.getAsync('commentator').then(commentator => {
