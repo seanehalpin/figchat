@@ -1,7 +1,6 @@
 async function main() {
   await figma.loadFontAsync({ family: "Roboto", style: "Regular" });
 }
-
 main().then(() => {
 
   let entirePage = figma.currentPage

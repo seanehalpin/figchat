@@ -113,8 +113,6 @@
 
   }
 
-  console.log(voteValue)
-
 </script>
 
 <div class="wrapper p-xxsmall">
@@ -200,7 +198,6 @@
     <Switch value="false" bind:checked={switchVoteMode}>Vote</Switch>
     {/if}
   </div>
-
   <div class="colors {switchValue}">
     <Radio bind:group={radioValue} value="yellow"></Radio>
     <Radio bind:group={radioValue} value="orange"></Radio>
@@ -213,7 +210,6 @@
     <Radio bind:group={radioValue} value="whaletail" ></Radio>
     <Radio bind:group={radioValue} value="lime"></Radio>
   </div>
-
   <div class="button-holder">
     <Button on:click={toggle} variant="secondary">Back</Button>
     <Button on:click={toggle} bind:class={add}>Update</Button>
