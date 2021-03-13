@@ -154,6 +154,7 @@ main().then(() => {
       uiFrame.topLeftRadius = 16
       uiFrame.bottomLeftRadius = 16
       uiFrame.bottomRightRadius = 16
+      uiFrame.primaryAxisSizingMode = 'AUTO'
 
       uiFrame.setRelaunchData({edit: "Press to launch Figchat and add your comments"})
 
@@ -167,6 +168,7 @@ main().then(() => {
       uiAutoLayout.verticalPadding = 16
       uiAutoLayout.itemSpacing = 10
       uiAutoLayout.fills = []
+      uiAutoLayout.primaryAxisSizingMode = 'AUTO'
 
       uiTitle.name = 'Title'
       uiTitle.characters = "Chat for # " + frameName
@@ -201,6 +203,7 @@ main().then(() => {
     uiMessageHolder.name = 'line item'
     uiMessageHolder.itemSpacing = 4
     uiMessageHolder.fills = []
+    uiMessageHolder.primaryAxisSizingMode = 'AUTO'
 
     uiBubble.topRightRadius = 24
     uiBubble.topLeftRadius = 24
